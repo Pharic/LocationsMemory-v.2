@@ -2,5 +2,26 @@
 @model LocationsMemory.Pages.Locations.ListModel
 @{
 }
+<head>
+    <link href="~/fontawesome-free-5.10.1-web/css/all.css" rel="stylesheet"> <!--load all styles -->
+</head>
+<h1>Locations</h1>
 
-<h1>Test</h1>
+<table class="table">
+    @foreach(var location in Model.Locations)
+    {
+        <tr>
+            <td>@location.Id</td>
+            <td>@location.Name</td>
+            <td>@location.administrative_area_level_2</td>
+            <td>
+                <a class="btn btn-lg" asp-page="./Detail" asp-route-locationId="@location.Id">
+                    <i class="fas fa-search-plus"></i>
+                </a>
+                <a class="btn btn-lg" asp-page="./Edit" asp-route-locationId="@location.Id">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </td>
+        </tr>
+    }
+</table>
