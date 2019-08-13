@@ -22,9 +22,17 @@ namespace LocationsMemory.Pages.Locations
             this.locationData = locationData;
         }
 
-        public IActionResult OnGet(int locationId)
+        public IActionResult OnGet(int? locationId)
         {
-            Location = locationData.GetById(locationId);
+            if (locationId.HasValue)
+            {
+                Location = locationData.GetById(locationId.Value);
+            }
+            else
+            {
+                Location = new Location();
+            }
+
             if(Location == null)
             {
                 return RedirectToPage("./NotFound");
@@ -33,13 +41,21 @@ namespace LocationsMemory.Pages.Locations
         }
         public IActionResult OnPost()
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            if(Location.Id > 0)
             {
                 locationData.Update(Location);
-                locationData.Commit();
-                return RedirectToPage("./Detail", new { locationId = Location.Id });
             }
-            return Page();
+            else
+            {
+                locationData.Add(Location);
+            }
+            locationData.Commit();
+            TempData["Message"] = "Location gespeichert!";
+            return RedirectToPage("./Detail", new { locationId = Location.Id });
         }
     }
 }

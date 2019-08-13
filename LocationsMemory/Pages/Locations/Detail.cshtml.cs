@@ -13,6 +13,9 @@ namespace LocationsMemory.Pages.Locations
     {
         private readonly ILocationData locationData;
 
+        [TempData]
+        public string Message { get; set; }
+
         public Location Location { get; set; }
 
         public DetailModel(ILocationData locationData)

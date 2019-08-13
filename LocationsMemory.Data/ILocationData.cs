@@ -12,6 +12,7 @@ namespace LocationsMemory.Data
         IEnumerable<Location> GetAll();
         Location GetById(int id);
         Location Update(Location updatedLocation);
+        Location Add(Location newLocation);
         int Commit();
     }
 
@@ -48,6 +49,12 @@ namespace LocationsMemory.Data
                 location.Longitude = updatedLocation.Longitude;
             }
             return location;
+        }
+        public Location Add(Location newLocation)
+        {
+            locations.Add(newLocation);
+            newLocation.Id = locations.Max(r => r.Id) + 1;
+            return newLocation;
         }
 
         public int Commit()
