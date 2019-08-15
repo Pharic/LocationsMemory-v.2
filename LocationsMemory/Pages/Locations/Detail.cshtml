@@ -6,42 +6,37 @@
 
 <h2>@Model.Location.Name</h2>
 
-@if(Model.Message != null)
+@if (Model.Message != null)
 {
     <div class="alert alert-info">@Model.Message</div>
 }
-
-
-<div>
-    Id: @Model.Location.Id
-</div>
-
-<div>
-    street_number: @Model.Location.street_number
-</div>
-
-<div>
-    route: @Model.Location.route
-</div>
-
-<div>
-    locality: @Model.Location.locality
-</div>
-
-<div>
-    administrative_area_level_2: @Model.Location.administrative_area_level_2
-</div>
-
-<div>
-    administrative_area_level_1: @Model.Location.administrative_area_level_1
-</div>
-
-<div>
-    country: @Model.Location.country
-</div>
-
-<div>
-    postal_code: @Model.Location.postal_code
-</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <th scope="row">ID</th>
+            <td>@Model.Location.Id</td>
+        </tr>
+        <tr>
+            <th scope="row">Hausnummer</th>
+            <td>@Model.Location.Street_number</td>
+        </tr>
+        <tr>
+            <th scope="row">Straßenname</th>
+            <td>@Model.Location.Street_name</td>
+        </tr>
+        <tr>
+            <th scope="row">Stadt</th>
+            <td>@Model.Location.City</td>
+        </tr>
+        <tr>
+            <th scope="row">Latitude</th>
+            <td>@Model.Location.Lat</td>
+        </tr>
+        <tr>
+            <th scope="row">Longitude</th>
+            <td>@Model.Location.Lng</td>
+        </tr>
+    </tbody>
+</table>
 
 <a asp-page="./list" class="btn btn-primary">Zurück zu allen Locations</a>

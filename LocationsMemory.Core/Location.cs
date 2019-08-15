@@ -11,15 +11,10 @@ namespace LocationsMemory.Core
 
         [Required, StringLength(40)]
         public string Name { get; set; }
-        public string street_number { get; set; }
-        public string route { get; set; }
-        public string political { get; set; }
-        public string locality { get; set; }
-        public string administrative_area_level_2 { get; set; }
-        public string administrative_area_level_1 { get; set; }
-        public string country { get; set; }
-        public string postal_code { get; set; }
-        public string Latitude { get; set; }
-        public string Longitude { get; set; }
+        public string Street_number { get; set; }
+        public string Street_name { get; set; }
+        public string City { get; set; }
+        public double Lat { get; set; }
+        public double Lng { get; set; }
     }
 }
