@@ -23,7 +23,7 @@ namespace LocationsMemory.Service
             Client = client;
         }
 
-        public async Task<string> GoogleApiDingens(Core.Location location)
+        public async Task<Core.Location> GoogleApiDingens(Core.Location location)
         {
             try
             {
@@ -33,7 +33,9 @@ namespace LocationsMemory.Service
 
                 var result = await response.Content.ReadAsStringAsync();
                 GoogleGeoecodingApi obj = JsonConvert.DeserializeObject<GoogleGeoecodingApi>(result);
-                return result;
+                location.Lat = obj.Results.FirstOrDefault().Geometry.Location.Lat;
+                location.Lng = obj.Results.FirstOrDefault().Geometry.Location.Lng;
+                return location;
             }
             catch (Exception e)
             {

@@ -14,6 +14,7 @@ namespace LocationsMemory.Core
         public string Street_number { get; set; }
         public string Street_name { get; set; }
         public string City { get; set; }
-        public string Formatted_address { get; set; }
+        public double Lat { get; set; }
+        public double Lng { get; set; }
     }
 }

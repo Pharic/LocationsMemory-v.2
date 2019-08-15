@@ -11,7 +11,6 @@
     <div class="alert alert-info">@Model.Message</div>
 }
 
-
 <div>
     Id: @Model.Location.Id
 </div>
@@ -28,21 +27,12 @@
     Stadt: @Model.Location.City
 </div>
 
-@*<div>
-    Test: @Model.AddressComponent.Long_name
-</div>*@
+<div>
+    Latitude: @Model.Location.Lat
+</div>
 
-@*
-    <div>
-        administrative_area_level_1: @Model.Location.administrative_area_level_1
-    </div>
-
-    <div>
-        country: @Model.Location.country
-    </div>
-
-    <div>
-        postal_code: @Model.Location.postal_code
-    </div>*@
+<div>
+    Longitude: @Model.Location.Lng
+</div>
 
 <a asp-page="./list" class="btn btn-primary">Zurück zu allen Locations</a>

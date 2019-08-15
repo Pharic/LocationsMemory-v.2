@@ -43,7 +43,7 @@ namespace LocationsMemory.Pages.Locations
             return Page();
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
             if (!ModelState.IsValid)
             {
@@ -55,7 +55,7 @@ namespace LocationsMemory.Pages.Locations
             }
             else
             {
-                var googleUrl = googleGeocodingService.GoogleApiDingens(Location);
+                var googleUrl = await googleGeocodingService.GoogleApiDingens(Location);
                 locationData.Add(Location);
             }
             locationData.Commit();
