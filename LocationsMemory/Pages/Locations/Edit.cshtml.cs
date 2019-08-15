@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LocationsMemory.Core;
 using LocationsMemory.Data;
+using LocationsMemory.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,13 +14,15 @@ namespace LocationsMemory.Pages.Locations
     public class EditModel : PageModel
     {
         private readonly ILocationData locationData;
+        private readonly GoogleGeocodingService googleGeocodingService;
 
         [BindProperty]
         public Location Location { get; set; }
 
-        public EditModel(ILocationData locationData)
+        public EditModel(ILocationData locationData, GoogleGeocodingService googleGeocodingService)
         {
             this.locationData = locationData;
+            this.googleGeocodingService = googleGeocodingService;
         }
 
         public IActionResult OnGet(int? locationId)
@@ -39,6 +42,7 @@ namespace LocationsMemory.Pages.Locations
             }
             return Page();
         }
+
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -51,6 +55,7 @@ namespace LocationsMemory.Pages.Locations
             }
             else
             {
+                var googleUrl = googleGeocodingService.GoogleApiDingens(Location);
                 locationData.Add(Location);
             }
             locationData.Commit();

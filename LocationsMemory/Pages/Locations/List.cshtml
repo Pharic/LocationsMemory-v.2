@@ -11,9 +11,9 @@
     @foreach(var location in Model.Locations)
     {
         <tr>
-            <td>@location.Id</td>
             <td>@location.Name</td>
-            <td>@location.administrative_area_level_2</td>
+            <td>@location.route</td>
+            <td>@location.locality</td>
             <td>
                 <a class="btn btn-lg" asp-page="./Detail" asp-route-locationId="@location.Id">
                     <i class="fas fa-search-plus"></i>

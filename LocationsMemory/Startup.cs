@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using LocationsMemory.Data;
+using LocationsMemory.Service;
 
 namespace LocationsMemory
 {
@@ -25,7 +26,7 @@ namespace LocationsMemory
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddHttpClient<GoogleGeocodingService>();
             services.AddSingleton<ILocationData, InMemoryLocationsData>();
             services.Configure<CookiePolicyOptions>(options =>
             {

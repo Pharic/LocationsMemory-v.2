@@ -13,12 +13,12 @@ namespace LocationsMemory.Core
         public string Name { get; set; }
         public string street_number { get; set; }
         public string route { get; set; }
+        public string political { get; set; }
         public string locality { get; set; }
         public string administrative_area_level_2 { get; set; }
         public string administrative_area_level_1 { get; set; }
         public string country { get; set; }
         public string postal_code { get; set; }
-        public string postal_code_suffix { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
     }
