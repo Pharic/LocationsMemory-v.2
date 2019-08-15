@@ -24,11 +24,9 @@ namespace LocationsMemory.Data
         {
             locations = new List<Location>()
             {
-                new Location { Id = 1, Name = "Location #1", street_number = "1600", route = "Amphitheatre Parkway", political ="Irgendwas", locality = "Mountain View", administrative_area_level_2 = "Santa Clara County",
-                    administrative_area_level_1 = "California", country = "United States", postal_code = "94043", Latitude = "37.4221316802915", Longitude = "-122.0842816197085"},
+                new Location { Id = 1, Name = "Location #1", Street_number = "1600", Street_name = "Amphitheatre Parkway", City = "Mountain View"},
 
-                new Location { Id = 2, Name = "Byte5", street_number = "114", route = "Hanauer Landstraße", political ="Bornheim/Ostend", locality = "Frankfurt am Main", administrative_area_level_2 = "Darmstadt",
-                    administrative_area_level_1 = "Hessen", country = "Germany", postal_code = "94043", Latitude = "37.4221316802915", Longitude = "-122.0842816197085"}
+                new Location { Id = 2, Name = "Byte5", Street_number = "114", Street_name = "Hanauer Landstraße", City = "Frankfurt am Main"}
             };
         }
 
@@ -38,16 +36,10 @@ namespace LocationsMemory.Data
             if(location != null)
             {
                 location.Name = updatedLocation.Name;
-                location.street_number = updatedLocation.street_number;
-                location.route = updatedLocation.route;
-                location.political = updatedLocation.political;
-                location.locality = updatedLocation.locality;
-                location.administrative_area_level_2 = updatedLocation.administrative_area_level_2;
-                location.administrative_area_level_1 = updatedLocation.administrative_area_level_1;
-                location.country = updatedLocation.country;
-                location.postal_code = updatedLocation.postal_code;
-                location.Latitude = updatedLocation.Latitude;
-                location.Longitude = updatedLocation.Longitude;
+                location.Street_number = updatedLocation.Street_number;
+                location.Street_name = updatedLocation.Street_name;
+                location.City = updatedLocation.City;
+
             }
             return location;
         }

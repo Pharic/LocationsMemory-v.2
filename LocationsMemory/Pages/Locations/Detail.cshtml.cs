@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LocationsMemory.Data;
-using LocationsMemory.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using LocationsMemory.APIs;
 
 namespace LocationsMemory.Pages.Locations
 {
@@ -16,7 +16,9 @@ namespace LocationsMemory.Pages.Locations
         [TempData]
         public string Message { get; set; }
 
-        public Location Location { get; set; }
+        public Core.Location Location { get; set; }
+
+        public AddressComponent AddressComponent { get; set; }
 
         public DetailModel(ILocationData locationData)
         {

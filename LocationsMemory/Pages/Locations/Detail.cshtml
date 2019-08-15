@@ -6,7 +6,7 @@
 
 <h2>@Model.Location.Name</h2>
 
-@if(Model.Message != null)
+@if (Model.Message != null)
 {
     <div class="alert alert-info">@Model.Message</div>
 }
@@ -17,31 +17,32 @@
 </div>
 
 <div>
-    street_number: @Model.Location.street_number
+    Hausnummer: @Model.Location.Street_number
 </div>
 
 <div>
-    route: @Model.Location.route
+    Straßenname: @Model.Location.Street_name
 </div>
 
 <div>
-    locality: @Model.Location.locality
+    Stadt: @Model.Location.City
 </div>
 
-<div>
-    administrative_area_level_2: @Model.Location.administrative_area_level_2
-</div>
+@*<div>
+    Test: @Model.AddressComponent.Long_name
+</div>*@
 
-<div>
-    administrative_area_level_1: @Model.Location.administrative_area_level_1
-</div>
+@*
+    <div>
+        administrative_area_level_1: @Model.Location.administrative_area_level_1
+    </div>
 
-<div>
-    country: @Model.Location.country
-</div>
+    <div>
+        country: @Model.Location.country
+    </div>
 
-<div>
-    postal_code: @Model.Location.postal_code
-</div>
+    <div>
+        postal_code: @Model.Location.postal_code
+    </div>*@
 
 <a asp-page="./list" class="btn btn-primary">Zurück zu allen Locations</a>

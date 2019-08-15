@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
+using LocationsMemory.APIs;
 using LocationsMemory.Core;
 using LocationsMemory.Data;
 using Newtonsoft.Json;
@@ -26,15 +27,12 @@ namespace LocationsMemory.Service
         {
             try
             {
-                var response = await Client.GetAsync($"/maps/api/geocode/json?address={location.street_number}+{location.route}+" +
-                    $"{location.political}+{location.locality}+{location.administrative_area_level_2}+{location.administrative_area_level_1}+{location.country}+" +
-                    $"{location.postal_code}{location.Latitude}+{location.Longitude}+&key=AIzaSyB_0wHwmbg5aMjbUxMvT3SxjlE_aSnYlp4");
+                var response = await Client.GetAsync($"/maps/api/geocode/json?address={location.Street_number}+{location.Street_name}+{location.City}+&key=AIzaSyB_0wHwmbg5aMjbUxMvT3SxjlE_aSnYlp4");
 
                 response.EnsureSuccessStatusCode();
 
-
                 var result = await response.Content.ReadAsStringAsync();
-                RootObject obj = JsonConvert.DeserializeObject<RootObject>(result);
+                GoogleGeoecodingApi obj = JsonConvert.DeserializeObject<GoogleGeoecodingApi>(result);
                 return result;
             }
             catch (Exception e)
