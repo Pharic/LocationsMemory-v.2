@@ -39,7 +39,8 @@ namespace LocationsMemory.Data
                 location.Street_number = updatedLocation.Street_number;
                 location.Street_name = updatedLocation.Street_name;
                 location.City = updatedLocation.City;
-
+                location.Lat = updatedLocation.Lat;
+                location.Lng = updatedLocation.Lng;
             }
             return location;
         }

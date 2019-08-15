@@ -10,29 +10,33 @@
 {
     <div class="alert alert-info">@Model.Message</div>
 }
-
-<div>
-    Id: @Model.Location.Id
-</div>
-
-<div>
-    Hausnummer: @Model.Location.Street_number
-</div>
-
-<div>
-    Straßenname: @Model.Location.Street_name
-</div>
-
-<div>
-    Stadt: @Model.Location.City
-</div>
-
-<div>
-    Latitude: @Model.Location.Lat
-</div>
-
-<div>
-    Longitude: @Model.Location.Lng
-</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <th scope="row">ID</th>
+            <td>@Model.Location.Id</td>
+        </tr>
+        <tr>
+            <th scope="row">Hausnummer</th>
+            <td>@Model.Location.Street_number</td>
+        </tr>
+        <tr>
+            <th scope="row">Straßenname</th>
+            <td>@Model.Location.Street_name</td>
+        </tr>
+        <tr>
+            <th scope="row">Stadt</th>
+            <td>@Model.Location.City</td>
+        </tr>
+        <tr>
+            <th scope="row">Latitude</th>
+            <td>@Model.Location.Lat</td>
+        </tr>
+        <tr>
+            <th scope="row">Longitude</th>
+            <td>@Model.Location.Lng</td>
+        </tr>
+    </tbody>
+</table>
 
 <a asp-page="./list" class="btn btn-primary">Zurück zu allen Locations</a>

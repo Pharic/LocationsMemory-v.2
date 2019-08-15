@@ -51,6 +51,7 @@ namespace LocationsMemory.Pages.Locations
             }
             if(Location.Id > 0)
             {
+                var googleUrl = await googleGeocodingService.GoogleApiDingens(Location);
                 locationData.Update(Location);
             }
             else
