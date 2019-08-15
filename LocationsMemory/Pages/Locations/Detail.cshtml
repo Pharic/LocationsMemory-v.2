@@ -1,0 +1,47 @@
+﻿@page
+@model LocationsMemory.Pages.Locations.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>@Model.Location.Name</h2>
+
+@if(Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+
+
+<div>
+    Id: @Model.Location.Id
+</div>
+
+<div>
+    street_number: @Model.Location.street_number
+</div>
+
+<div>
+    route: @Model.Location.route
+</div>
+
+<div>
+    locality: @Model.Location.locality
+</div>
+
+<div>
+    administrative_area_level_2: @Model.Location.administrative_area_level_2
+</div>
+
+<div>
+    administrative_area_level_1: @Model.Location.administrative_area_level_1
+</div>
+
+<div>
+    country: @Model.Location.country
+</div>
+
+<div>
+    postal_code: @Model.Location.postal_code
+</div>
+
+<a asp-page="./list" class="btn btn-primary">Zurück zu allen Locations</a>

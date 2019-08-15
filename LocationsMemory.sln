@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationsMemory", "LocationsMemory\LocationsMemory.csproj", "{98A83F4C-5239-4950-8A8E-E01681ED4CB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocationsMemory", "LocationsMemory\LocationsMemory.csproj", "{98A83F4C-5239-4950-8A8E-E01681ED4CB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationsMemory.Core", "LocationsMemory.Core\LocationsMemory.Core.csproj", "{01E480E6-52CC-4956-9C0B-2B172B4F46A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocationsMemory.Core", "LocationsMemory.Core\LocationsMemory.Core.csproj", "{01E480E6-52CC-4956-9C0B-2B172B4F46A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationsMemory.Data", "LocationsMemory.Data\LocationsMemory.Data.csproj", "{C4F02DB0-B0A5-47DD-BB47-8492FDB74CB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocationsMemory.Data", "LocationsMemory.Data\LocationsMemory.Data.csproj", "{C4F02DB0-B0A5-47DD-BB47-8492FDB74CB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
