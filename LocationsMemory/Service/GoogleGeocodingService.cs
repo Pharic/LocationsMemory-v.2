@@ -37,9 +37,8 @@ namespace LocationsMemory.Service
                 location.Lng = obj.Results.FirstOrDefault().Geometry.Location.Lng;
                 return location;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
                 throw;
             }
             
