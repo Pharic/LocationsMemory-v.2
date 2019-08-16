@@ -7,6 +7,19 @@
 </head>
 <h1>Locations</h1>
 
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </span> 
+        </div>
+    </div>
+</form>
+
 <table class="table">
     @foreach(var location in Model.Locations)
     {
