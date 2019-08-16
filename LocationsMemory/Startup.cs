@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using LocationsMemory.Data;
 using LocationsMemory.Service;
+using Microsoft.EntityFrameworkCore;
 
 namespace LocationsMemory
 {
@@ -27,7 +28,14 @@ namespace LocationsMemory
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient<GoogleGeocodingService>();
-            services.AddSingleton<ILocationData, InMemoryLocationsData>();
+
+            services.AddDbContextPool<LocationsMemoryDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("LocationsMemoryDb"));
+            });
+
+            services.AddScoped<ILocationData, SqlLocationData>();
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.

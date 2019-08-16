@@ -9,5 +9,10 @@ namespace LocationsMemory.Data
     public class LocationsMemoryDbContext : DbContext
     {
         public DbSet<Location> Locations { get; set; }
+
+        public LocationsMemoryDbContext(DbContextOptions<LocationsMemoryDbContext>options) : base(options)
+        {
+
+        }
     }
 }

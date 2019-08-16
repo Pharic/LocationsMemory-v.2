@@ -16,14 +16,17 @@ namespace LocationsMemory.Pages.Locations
 
         public IEnumerable<Location> Locations { get; set; }
 
+        [BindProperty(SupportsGet =true)]
+        public string SearchTerm { get; set; }
+
         public ListModel(ILocationData locationData)
         {
             this.locationData = locationData;
         }
-        
-        public void OnGet()
+
+        public void OnGet(string searchTerm)
         {
-            Locations = locationData.GetAll();
+            Locations = locationData.GetAll(searchTerm);
         }
     }
 }
