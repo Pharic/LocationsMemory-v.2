@@ -1,0 +1,15 @@
+﻿@page "{locationId}"
+@model LocationsMemory.Pages.Locations.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="alert alert-danger">
+    Sind Sie sich sicher, dass sie die @Model.Location.Name Loction löschen möchten?
+</div>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Ja man!</button>
+    <a asp-page="List" class="btn btn-primary">Nein man!</a>
+</form>
+
